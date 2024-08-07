@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   channel: {fileID: 11400000, guid: 120b8f2564c53264fbb8f0b57abeed54, type: 2}
-  music: {fileID: 0}
+  music: {fileID: 8300000, guid: b777591f5bff7084a8edd920a5d0132b, type: 3}
 --- !u!4 &477351354
 Transform:
   m_ObjectHideFlags: 0
@@ -179,7 +179,7 @@ GameObject:
   - component: {fileID: 751226157}
   - component: {fileID: 751226158}
   m_Layer: 0
-  m_Name: Audio
+  m_Name: SFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -209,7 +209,8 @@ AudioSource:
   m_GameObject: {fileID: 751226156}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 4511625846678855252, guid: 4e88849d27acd6e4d8ebad2f0fe310b7,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -339,8 +340,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d4722e88a4a9ec4f80dee61a245b8a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicSource: {fileID: 0}
-  effectSource: {fileID: 0}
+  musicSource: {fileID: 1791364773}
+  effectSource: {fileID: 751226158}
 --- !u!4 &1229409640
 Transform:
   m_ObjectHideFlags: 0
@@ -354,8 +355,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 751226157}
   - {fileID: 1791364772}
+  - {fileID: 751226157}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1791364771
@@ -399,7 +400,8 @@ AudioSource:
   m_GameObject: {fileID: 1791364771}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -7535669240201726729, guid: 4e88849d27acd6e4d8ebad2f0fe310b7,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1

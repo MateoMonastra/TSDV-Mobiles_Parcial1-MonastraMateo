@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scenes:
   - SoundManager
+  - conduccion9
   - Game
   - Menu
-  - Credits
   - Credits
