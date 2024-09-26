@@ -1,0 +1,3 @@
+Patrones de diseño:
+
+Singleton : Script GameManager, linea 9
