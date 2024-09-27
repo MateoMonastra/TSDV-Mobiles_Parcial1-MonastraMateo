@@ -1,3 +1,14 @@
 Patrones de diseño:
 
-Singleton : Script GameManager, linea 9
+Singleton: Script GameManager, linea 9
+
+Channels: Scripts 
+
+Pull de Objetos: Scripts
+
+7 28 27 26 6 25 24 20 23 1 22 21 19
+
+
+matar los que esten atrs en eje Z
+
+Hora de la siest, Hora pico

@@ -4,8 +4,8 @@ using UnityEngine.Serialization;
 public class ControlDireccion : MonoBehaviour
 {
 
-    [SerializeField] private int _playerID;
-    public bool habilitado = true;
+    [SerializeField] private int playerID = 1;
+    public bool Habilitado = true;
     CarController _carController;
     private float _giro = 0;
 
@@ -16,13 +16,14 @@ public class ControlDireccion : MonoBehaviour
     {
         _carController = GetComponent<CarController>();
     }
-
     
     void Update()
     {
-        if (habilitado)
+        if (Habilitado)
         {
-            InputManager.GetInstance().GetAxis($"Horizontal{_playerID}");
+            InputManager.GetInstance().GetAxis($"Horizontal{playerID}");
+            Debug.Log("entro");
+            Debug.Log(playerID);
         }
         
         _carController.SetGiro(_giro);

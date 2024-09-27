@@ -32115,33 +32115,61 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1389784142}
   - {fileID: 4661}
+  - {fileID: 956160528}
   - {fileID: 4651}
+  - {fileID: 1404635717}
   - {fileID: 4643}
+  - {fileID: 2009949159}
   - {fileID: 4653}
+  - {fileID: 1317312686}
   - {fileID: 4650}
+  - {fileID: 1723973066}
   - {fileID: 4665}
+  - {fileID: 2129352557}
   - {fileID: 4669}
+  - {fileID: 991971866}
   - {fileID: 4642}
+  - {fileID: 2085258489}
   - {fileID: 4644}
+  - {fileID: 1699721136}
   - {fileID: 4645}
+  - {fileID: 275430534}
   - {fileID: 4646}
+  - {fileID: 155831429}
   - {fileID: 4647}
+  - {fileID: 159519686}
   - {fileID: 4648}
+  - {fileID: 786133351}
   - {fileID: 4649}
+  - {fileID: 329339748}
   - {fileID: 4652}
+  - {fileID: 23082341}
   - {fileID: 4654}
+  - {fileID: 804323826}
   - {fileID: 4655}
+  - {fileID: 1736136599}
   - {fileID: 4656}
+  - {fileID: 1761559967}
   - {fileID: 4657}
+  - {fileID: 1804117734}
   - {fileID: 4658}
+  - {fileID: 1476532241}
   - {fileID: 4659}
+  - {fileID: 1407949844}
   - {fileID: 4660}
+  - {fileID: 656710161}
   - {fileID: 4662}
+  - {fileID: 1168033018}
   - {fileID: 4663}
+  - {fileID: 1007086723}
   - {fileID: 4664}
+  - {fileID: 2054281551}
   - {fileID: 4666}
+  - {fileID: 388939461}
   - {fileID: 4667}
+  - {fileID: 2119235110}
   - {fileID: 4668}
   m_Father: {fileID: 1269805226}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -76264,6 +76292,14 @@ PrefabInstance:
       value: Bolsa Dinero
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 514ac53862939534083df9fb1d9b6d0d, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 6.88362
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 514ac53862939534083df9fb1d9b6d0d, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 6.883613
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 514ac53862939534083df9fb1d9b6d0d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -68.63269
       objectReference: {fileID: 0}
@@ -84329,6 +84365,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 11471491}
   m_CullTransparentMesh: 1
+--- !u!1 &23082340
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 23082341}
+  m_Layer: 0
+  m_Name: BolsaPos16
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &23082341
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 23082340}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.0013442311, y: 0.7071055, z: 0.7071055, w: -0.0013442304}
+  m_LocalPosition: {x: -121.609344, y: -0.814168, z: 525.93896}
+  m_LocalScale: {x: 6.883626, y: 6.883616, z: 6.883611}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6249}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &27660009
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -84387,6 +84454,11 @@ PrefabInstance:
         type: 3}
       propertyPath: InputAct
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114475702172432364, guid: b81b1a58a0f14c9439cbdd014e695f71,
+        type: 3}
+      propertyPath: playerID
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114475702172432364, guid: b81b1a58a0f14c9439cbdd014e695f71,
         type: 3}
@@ -85201,6 +85273,184 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 60763189}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &95545359
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 95545361}
+  - component: {fileID: 95545360}
+  m_Layer: 0
+  m_Name: ObjectPullController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &95545360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 95545359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 859066048aaf70d4fb070cf99e2f7c5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  primerCuarto: {fileID: 172071929}
+  bolsasPrimerCuarto:
+  - {fileID: 2129352556}
+  - {fileID: 2119235109}
+  - {fileID: 388939460}
+  - {fileID: 2054281550}
+  - {fileID: 1723973065}
+  - {fileID: 1007086722}
+  - {fileID: 1168033017}
+  - {fileID: 656710160}
+  - {fileID: 1804117733}
+  - {fileID: 1389784141}
+  - {fileID: 1407949843}
+  - {fileID: 1476532240}
+  - {fileID: 1761559966}
+  segundoCuarto: {fileID: 1648302195}
+  bolsasSegundoCuarto: []
+  tercerCuarto: {fileID: 0}
+  bolsasTercerCuarto: []
+--- !u!4 &95545361
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 95545359}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -16.928139, y: -108.6138, z: 5626.7593}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &155831428
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 155831429}
+  m_Layer: 0
+  m_Name: BolsaPos12
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &155831429
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 155831428}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.0013442311, y: 0.7071055, z: 0.7071055, w: -0.0013442304}
+  m_LocalPosition: {x: -218.29277, y: -0.814168, z: 815.90674}
+  m_LocalScale: {x: 6.8836327, y: 6.8836193, z: 6.883611}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6249}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &159519685
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 159519686}
+  m_Layer: 0
+  m_Name: BolsaPos13
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &159519686
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 159519685}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.0013442311, y: 0.7071055, z: 0.7071055, w: -0.0013442304}
+  m_LocalPosition: {x: -196.6019, y: -0.814168, z: 801.4458}
+  m_LocalScale: {x: 6.8836317, y: 6.883619, z: 6.883611}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6249}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &172071927
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 172071928}
+  - component: {fileID: 172071929}
+  m_Layer: 0
+  m_Name: PrimerCuarto
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &172071928
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 172071927}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.36796138, z: -0, w: 0.92984104}
+  m_LocalPosition: {x: -67.5, y: 3.28, z: 5570.8}
+  m_LocalScale: {x: 54.476303, y: 8.1078, z: 8.1078}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 635627578}
+  m_LocalEulerAnglesHint: {x: 0, y: -43.18, z: 0}
+--- !u!65 &172071929
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 172071927}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &227525524 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5347541341094276324, guid: db6086bb6cb40af44868891788f049a9,
@@ -85289,6 +85539,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 243081349}
   m_CullTransparentMesh: 1
+--- !u!1 &275430533
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 275430534}
+  m_Layer: 0
+  m_Name: BolsaPos11
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &275430534
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 275430533}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.0013442311, y: 0.7071055, z: 0.7071055, w: -0.0013442304}
+  m_LocalPosition: {x: -241.85817, y: -0.814168, z: 837.59766}
+  m_LocalScale: {x: 6.8836336, y: 6.88362, z: 6.883611}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6249}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &282921451
 GameObject:
   m_ObjectHideFlags: 0
@@ -85325,6 +85606,37 @@ RectTransform:
   m_AnchoredPosition: {x: 6.215088, y: -209.03375}
   m_SizeDelta: {x: -655.5697, y: -418.6475}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &329339747
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 329339748}
+  m_Layer: 0
+  m_Name: BolsaPos15
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &329339748
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 329339747}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.0013442311, y: 0.7071055, z: 0.7071055, w: -0.0013442304}
+  m_LocalPosition: {x: -120.43036, y: -0.814168, z: 681.4907}
+  m_LocalScale: {x: 6.883628, y: 6.883617, z: 6.883611}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6249}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &354886827
 GameObject:
   m_ObjectHideFlags: 0
@@ -85373,6 +85685,37 @@ MonoBehaviour:
   miInput: 1
   Desde: {fileID: 13040}
   Hasta: {fileID: 13041}
+--- !u!1 &388939460
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 388939461}
+  m_Layer: 0
+  m_Name: BolsaPos27
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &388939461
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 388939460}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.0013442311, y: 0.7071055, z: 0.7071055, w: -0.0013442304}
+  m_LocalPosition: {x: -35.411636, y: -0.8141639, z: 223.01123}
+  m_LocalScale: {x: 6.8836155, y: 6.8836107, z: 6.883611}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6249}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &611983551
 GameObject:
   m_ObjectHideFlags: 0
@@ -85635,7 +85978,7 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b81b1a58a0f14c9439cbdd014e695f71, type: 3}
---- !u!1 &679259223
+--- !u!1 &635627577
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -85643,28 +85986,61 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 679259224}
+  - component: {fileID: 635627578}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: SeparacionesDelMapa
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &679259224
+--- !u!4 &635627578
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 679259223}
+  m_GameObject: {fileID: 635627577}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 580.70166, y: 323.26657, z: 0.014860987}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 172071928}
+  - {fileID: 1648302196}
+  m_Father: {fileID: 1269805226}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &656710160
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 656710161}
+  m_Layer: 0
+  m_Name: BolsaPos23
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &656710161
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 656710160}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.0013442311, y: 0.7071055, z: 0.7071055, w: -0.0013442304}
+  m_LocalPosition: {x: -35.76033, y: -0.814168, z: 338.81787}
+  m_LocalScale: {x: 6.8836184, y: 6.883612, z: 6.883611}
+  m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 6249}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &724752755
 GameObject:
@@ -85741,6 +86117,68 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 724752755}
   m_CullTransparentMesh: 1
+--- !u!1 &786133350
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 786133351}
+  m_Layer: 0
+  m_Name: BolsaPos14
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &786133351
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 786133350}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.0013442311, y: 0.7071055, z: 0.7071055, w: -0.0013442304}
+  m_LocalPosition: {x: -150.27448, y: -0.814168, z: 740.38965}
+  m_LocalScale: {x: 6.8836308, y: 6.8836184, z: 6.883611}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6249}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &804323825
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 804323826}
+  m_Layer: 0
+  m_Name: BolsaPos17
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &804323826
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 804323825}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.0013442311, y: 0.7071055, z: 0.7071055, w: -0.0013442304}
+  m_LocalPosition: {x: -112.24393, y: -0.814168, z: 520.1323}
+  m_LocalScale: {x: 6.883625, y: 6.8836155, z: 6.883611}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6249}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &865468521
 GameObject:
   m_ObjectHideFlags: 0
@@ -85897,6 +86335,99 @@ MonoBehaviour:
   stick: {fileID: 1922066329}
   player: 2
   limit: 80
+--- !u!1 &956160527
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 956160528}
+  m_Layer: 0
+  m_Name: BolsaPos2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &956160528
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 956160527}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.0013442311, y: 0.7071055, z: 0.7071055, w: -0.0013442304}
+  m_LocalPosition: {x: -112.85092, y: -0.814168, z: 698.54443}
+  m_LocalScale: {x: 6.883619, y: 6.883612, z: 6.883611}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6249}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &991971865
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 991971866}
+  m_Layer: 0
+  m_Name: BolsaPos8
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &991971866
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 991971865}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.0013442311, y: 0.7071055, z: 0.7071055, w: -0.0013442304}
+  m_LocalPosition: {x: -285.1225, y: -0.814168, z: 908.8032}
+  m_LocalScale: {x: 6.8836374, y: 6.8836217, z: 6.883611}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6249}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1007086722
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1007086723}
+  m_Layer: 0
+  m_Name: BolsaPos25
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1007086723
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1007086722}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.0013442311, y: 0.7071055, z: 0.7071055, w: -0.0013442304}
+  m_LocalPosition: {x: -35.28893, y: -0.81416535, z: 255.28564}
+  m_LocalScale: {x: 6.8836164, y: 6.883611, z: 6.883611}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6249}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1041039464
 GameObject:
   m_ObjectHideFlags: 0
@@ -85975,6 +86506,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1168033017
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1168033018}
+  m_Layer: 0
+  m_Name: BolsaPos24
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1168033018
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1168033017}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.0013442311, y: 0.7071055, z: 0.7071055, w: -0.0013442304}
+  m_LocalPosition: {x: -20.304981, y: -0.814168, z: 323.85742}
+  m_LocalScale: {x: 6.8836174, y: 6.8836117, z: 6.883611}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6249}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1187412604 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5347541339907708172, guid: db6086bb6cb40af44868891788f049a9,
@@ -86127,7 +86689,39 @@ Transform:
   - {fileID: 6271}
   - {fileID: 3360}
   - {fileID: 6249}
+  - {fileID: 635627578}
   m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1317312685
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1317312686}
+  m_Layer: 0
+  m_Name: BolsaPos5
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1317312686
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1317312685}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.0013442311, y: 0.7071055, z: 0.7071055, w: -0.0013442304}
+  m_LocalPosition: {x: -123.272675, y: -0.814168, z: 714.6509}
+  m_LocalScale: {x: 6.8836193, y: 6.8836126, z: 6.883611}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6249}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1325283264
 GameObject:
@@ -86177,6 +86771,99 @@ MonoBehaviour:
   miInput: 0
   Desde: {fileID: 13062}
   Hasta: {fileID: 13063}
+--- !u!1 &1389784141
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1389784142}
+  m_Layer: 0
+  m_Name: BolsaPos1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1389784142
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1389784141}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.0013452668, y: -0.7071055, z: -0.7071055, w: 0.0013452668}
+  m_LocalPosition: {x: -68.63269, y: -0.814168, z: 367.5029}
+  m_LocalScale: {x: 6.88362, y: 6.883613, z: 6.883613}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6249}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: -179.782}
+--- !u!1 &1404635716
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1404635717}
+  m_Layer: 0
+  m_Name: BolsaPos3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1404635717
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1404635716}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.0013442311, y: 0.7071055, z: 0.7071055, w: -0.0013442304}
+  m_LocalPosition: {x: -294.69492, y: -0.814168, z: 900.08154}
+  m_LocalScale: {x: 6.883619, y: 6.883612, z: 6.883611}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6249}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1407949843
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1407949844}
+  m_Layer: 0
+  m_Name: BolsaPos22
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1407949844
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1407949843}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.0013442311, y: 0.7071055, z: 0.7071055, w: -0.0013442304}
+  m_LocalPosition: {x: -101.71443, y: -0.814168, z: 410.2168}
+  m_LocalScale: {x: 6.8836203, y: 6.883613, z: 6.883611}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6249}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1425887806 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100012, guid: 42ccde1c0abcc4944b4fc7242368f31a,
@@ -86223,6 +86910,37 @@ Transform:
   - {fileID: 6257}
   - {fileID: 1103461344}
   m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1476532240
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1476532241}
+  m_Layer: 0
+  m_Name: BolsaPos21
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1476532241
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1476532240}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.0013442311, y: 0.7071055, z: 0.7071055, w: -0.0013442304}
+  m_LocalPosition: {x: -121.28641, y: -0.814168, z: 440.90088}
+  m_LocalScale: {x: 6.883621, y: 6.8836136, z: 6.883611}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6249}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1568178463
 GameObject:
@@ -86278,6 +86996,59 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 60763189}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1648302194
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1648302196}
+  - component: {fileID: 1648302195}
+  m_Layer: 0
+  m_Name: SegundoCuarto
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &1648302195
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1648302194}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &1648302196
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1648302194}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.01627323, z: -0, w: 0.9998676}
+  m_LocalPosition: {x: -97.1, y: 3.28, z: 5783.2}
+  m_LocalScale: {x: 54.476303, y: 8.1078, z: 8.1078}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 635627578}
+  m_LocalEulerAnglesHint: {x: 0, y: -1.865, z: 0}
 --- !u!1 &1686191978
 GameObject:
   m_ObjectHideFlags: 0
@@ -86312,7 +87083,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -100.999954, y: -141.99998}
+  m_AnchoredPosition: {x: -100.999954, y: -142}
   m_SizeDelta: {x: -359.93768, y: -421.31732}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1686191980
@@ -86360,6 +87131,161 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1699721135
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1699721136}
+  m_Layer: 0
+  m_Name: BolsaPos10
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1699721136
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1699721135}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.0013442311, y: 0.7071055, z: 0.7071055, w: -0.0013442304}
+  m_LocalPosition: {x: -230.87883, y: -0.814168, z: 844.56055}
+  m_LocalScale: {x: 6.8836346, y: 6.8836203, z: 6.883611}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6249}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1723973065
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1723973066}
+  m_Layer: 0
+  m_Name: BolsaPos6
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1723973066
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1723973065}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.0013442311, y: 0.7071055, z: 0.7071055, w: -0.0013442304}
+  m_LocalPosition: {x: -22.440845, y: -0.81416535, z: 255.23535}
+  m_LocalScale: {x: 6.8836193, y: 6.8836126, z: 6.883611}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6249}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1736136598
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1736136599}
+  m_Layer: 0
+  m_Name: BolsaPos18
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1736136599
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1736136598}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.0013442311, y: 0.7071055, z: 0.7071055, w: -0.0013442304}
+  m_LocalPosition: {x: -125.73012, y: -0.814168, z: 502.7124}
+  m_LocalScale: {x: 6.883625, y: 6.8836155, z: 6.883611}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6249}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1761559966
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1761559967}
+  m_Layer: 0
+  m_Name: BolsaPos19
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1761559967
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1761559966}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.0013442311, y: 0.7071055, z: 0.7071055, w: -0.0013442304}
+  m_LocalPosition: {x: -139.59093, y: -0.814168, z: 483.98145}
+  m_LocalScale: {x: 6.883623, y: 6.8836145, z: 6.883611}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6249}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1804117733
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1804117734}
+  m_Layer: 0
+  m_Name: BolsaPos20
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1804117734
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1804117733}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.0013442311, y: 0.7071055, z: 0.7071055, w: -0.0013442304}
+  m_LocalPosition: {x: -39.315277, y: -0.8141632, z: 320.56738}
+  m_LocalScale: {x: 6.883622, y: 6.883614, z: 6.883611}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6249}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &1839095751 stripped
 RectTransform:
@@ -86466,6 +87392,161 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 5347541341002542960}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2009949158
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2009949159}
+  m_Layer: 0
+  m_Name: BolsaPos4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2009949159
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2009949158}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.0013442311, y: 0.7071055, z: 0.7071055, w: -0.0013442304}
+  m_LocalPosition: {x: -113.180466, y: -0.814168, z: 572.0171}
+  m_LocalScale: {x: 6.883619, y: 6.883612, z: 6.883611}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6249}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2054281550
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2054281551}
+  m_Layer: 0
+  m_Name: BolsaPos26
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2054281551
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2054281550}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.0013442311, y: 0.7071055, z: 0.7071055, w: -0.0013442304}
+  m_LocalPosition: {x: -22.563557, y: -0.8141639, z: 222.96094}
+  m_LocalScale: {x: 6.8836117, y: 6.8836093, z: 6.8836093}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6249}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2085258488
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2085258489}
+  m_Layer: 0
+  m_Name: BolsaPos9
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2085258489
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2085258488}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.0013442311, y: 0.7071055, z: 0.7071055, w: -0.0013442304}
+  m_LocalPosition: {x: -268.95575, y: -0.814168, z: 878.8091}
+  m_LocalScale: {x: 6.8836374, y: 6.8836217, z: 6.883611}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6249}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2119235109
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2119235110}
+  m_Layer: 0
+  m_Name: BolsaPos28
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2119235110
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2119235109}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.016949957, y: 0.70690364, z: 0.70690364, w: 0.016949954}
+  m_LocalPosition: {x: -35.02295, y: -0.81415963, z: 189.50879}
+  m_LocalScale: {x: 6.883612, y: 6.883609, z: 6.88361}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6249}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2129352556
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2129352557}
+  m_Layer: 0
+  m_Name: BolsaPos7
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2129352557
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2129352556}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.016949957, y: 0.70690364, z: 0.70690364, w: 0.016949954}
+  m_LocalPosition: {x: -22.189499, y: -0.81415963, z: 190.12451}
+  m_LocalScale: {x: 6.88362, y: 6.8836126, z: 6.8836117}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6249}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &5347541341002542960
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -87083,5 +88164,5 @@ SceneRoots:
   - {fileID: 1269805226}
   - {fileID: 1471600240}
   - {fileID: 6273}
-  - {fileID: 679259224}
   - {fileID: 1689936776}
+  - {fileID: 95545361}

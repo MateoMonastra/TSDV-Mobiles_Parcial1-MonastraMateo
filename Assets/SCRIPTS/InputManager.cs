@@ -34,9 +34,6 @@ public class InputManager
 #if UNITY_ANDROID || UNITY_IOS
         return GetOrAddAxis(inputName);
 #endif
-#if UNITY_STANDALONE
-        return Input.GetAxis(inputName);
-#endif
     }
 
     public float GetOrAddAxis(string axisName)
