@@ -9,6 +9,8 @@ public class Bolsa : MonoBehaviour
 	public Texture2D ImagenInventario;
 	Player Pj = null;
 	
+	
+	public bool isActive = false;
 	bool Desapareciendo;
 	public GameObject Particulas;
 	public float TiempParts = 2.5f;
@@ -27,9 +29,9 @@ public class Bolsa : MonoBehaviour
 		{
 			TiempParts -= Time.deltaTime;
 			if(TiempParts <= 0)
-			{
-				GetComponent<Renderer>().enabled = true;
-				GetComponent<Collider>().enabled = true;
+			{ 
+				transform.position = Vector3.zero;
+				isActive = false;
 			}
 		}
 		
@@ -52,6 +54,7 @@ public class Bolsa : MonoBehaviour
 		
 		GetComponent<Renderer>().enabled = false;
 		GetComponent<Collider>().enabled = false;
+		isActive = false;
 	
 	}
 }

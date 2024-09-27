@@ -47,6 +47,8 @@ public class GameManager : MonoBehaviour
     //la pista de carreras
     public GameObject[] ObjsCarrera;
 
+    public Vector3 currentLastPlace;
+
     //--------------------------------------------------------//
 
     void Awake()
@@ -158,6 +160,8 @@ public class GameManager : MonoBehaviour
 
                 TiempoDeJuegoText.text = TiempoDeJuego.ToString("00");
 
+                CheckLastPlace();
+                
                 break;
 
             case EstadoJuego.Finalizado:
@@ -338,5 +342,17 @@ public class GameManager : MonoBehaviour
 
         if (Player1.FinTuto && Player2.FinTuto)
             CambiarACarrera();
+    }
+
+    private void CheckLastPlace()
+    {
+        if (Player1.transform.position.z > Player2.transform.position.z)
+        {
+            currentLastPlace = Player2.transform.position;
+        }
+        else
+        {
+            currentLastPlace = Player1.transform.position;
+        }
     }
 }
