@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PalletMover : ManejoPallets {
-
+public class PalletMover : ManejoPallets
+{
     public MoveType miInput;
-    public enum MoveType {
+
+    public enum MoveType
+    {
         WASD,
         Arrows
     }
@@ -13,57 +15,82 @@ public class PalletMover : ManejoPallets {
     public ManejoPallets Desde, Hasta;
     bool segundoCompleto = false;
 
-    private void Update() {
-        switch (miInput) {
+    private void Update()
+    {
+        switch (miInput)
+        {
             case MoveType.WASD:
-                if (!Tenencia() && Desde.Tenencia() && Input.GetKeyDown(KeyCode.A)) {
+                if (!Tenencia() && Desde.Tenencia() && InputManager.GetInstance().GetAxis("Horizontal1") < 0)
+                {
                     PrimerPaso();
                 }
-                if (Tenencia() && Input.GetKeyDown(KeyCode.S)) {
+
+                if (Tenencia() && InputManager.GetInstance().GetAxis("Vertical1") < 0)
+                {
                     SegundoPaso();
                 }
-                if (segundoCompleto && Tenencia() && Input.GetKeyDown(KeyCode.D)) {
+
+                if (segundoCompleto && Tenencia() && InputManager.GetInstance().GetAxis("Horizontal1") > 0)
+                {
                     TercerPaso();
                 }
+
                 break;
             case MoveType.Arrows:
-                if (!Tenencia() && Desde.Tenencia() && Input.GetKeyDown(KeyCode.LeftArrow)) {
+                if (!Tenencia() && Desde.Tenencia() && InputManager.GetInstance().GetAxis("Horizontal2") < 0)
+                {
                     PrimerPaso();
                 }
-                if (Tenencia() && Input.GetKeyDown(KeyCode.DownArrow)) {
+
+                if (Tenencia() && InputManager.GetInstance().GetAxis("Vertical2") < 0)
+                {
                     SegundoPaso();
                 }
-                if (segundoCompleto && Tenencia() && Input.GetKeyDown(KeyCode.RightArrow)) {
+
+                if (segundoCompleto && Tenencia() && InputManager.GetInstance().GetAxis("Horizontal2") > 0)
+                {
                     TercerPaso();
                 }
+
                 break;
             default:
                 break;
         }
     }
 
-    void PrimerPaso() {
+    void PrimerPaso()
+    {
         Desde.Dar(this);
         segundoCompleto = false;
     }
-    void SegundoPaso() {
+
+    void SegundoPaso()
+    {
         base.Pallets[0].transform.position = transform.position;
         segundoCompleto = true;
     }
-    void TercerPaso() {
+
+    void TercerPaso()
+    {
         Dar(Hasta);
         segundoCompleto = false;
     }
 
-    public override void Dar(ManejoPallets receptor) {
-        if (Tenencia()) {
-            if (receptor.Recibir(Pallets[0])) {
+    public override void Dar(ManejoPallets receptor)
+    {
+        if (Tenencia())
+        {
+            if (receptor.Recibir(Pallets[0]))
+            {
                 Pallets.RemoveAt(0);
             }
         }
     }
-    public override bool Recibir(Pallet pallet) {
-        if (!Tenencia()) {
+
+    public override bool Recibir(Pallet pallet)
+    {
+        if (!Tenencia())
+        {
             pallet.Portador = this.gameObject;
             base.Recibir(pallet);
             return true;
