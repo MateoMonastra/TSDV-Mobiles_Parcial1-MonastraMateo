@@ -30,8 +30,7 @@ public class InputManager
     {
 #if UNITY_EDITOR
         return GetOrAddAxis(inputName) + Input.GetAxis(inputName);
-#endif
-#if UNITY_ANDROID || UNITY_IOS
+#elif UNITY_ANDROID || UNITY_IOS
         return GetOrAddAxis(inputName);
 #endif
     }

@@ -21,9 +21,7 @@ public class ControlDireccion : MonoBehaviour
     {
         if (Habilitado)
         {
-            InputManager.GetInstance().GetAxis($"Horizontal{playerID}");
-            Debug.Log("entro");
-            Debug.Log(playerID);
+            _giro = InputManager.GetInstance().GetAxis($"Horizontal{playerID}");
         }
         
         _carController.SetGiro(_giro);
