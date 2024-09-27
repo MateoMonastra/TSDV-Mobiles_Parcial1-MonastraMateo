@@ -3,10 +3,16 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using EventSystems.EventSceneManager;
+using UnityEngine.Serialization;
 
 public class GameManager : MonoBehaviour
 {
     private static GameManager _instancia;
+    
+    [SerializeField] private FinalScore finalScore;
+    [SerializeField] private string nextScene = "PtsFinal";
+    [SerializeField]private EventChannelSceneManager eventChannelSceneManager;
 
     public float TiempoDeJuego = 60;
 
@@ -50,6 +56,8 @@ public class GameManager : MonoBehaviour
     public GameObject[] ObjsCarrera;
 
     public Vector3 currentLastPlace;
+
+    
 
     //--------------------------------------------------------//
 
@@ -179,7 +187,11 @@ public class GameManager : MonoBehaviour
 
                 TiempEspMuestraPts -= Time.deltaTime;
                 if (TiempEspMuestraPts <= 0)
-                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                {
+                    eventChannelSceneManager.RemoveScene(gameObject.scene.name);
+                    eventChannelSceneManager.AddScene(nextScene);
+                    
+                }
 
                 break;
         }
@@ -237,29 +249,8 @@ public class GameManager : MonoBehaviour
 
         TiempoDeJuego = 0;
 
-        if (Player1.Dinero > Player2.Dinero)
-        {
-            //lado que gano
-            if (Player1.LadoActual == Visualizacion.Lado.Der)
-                DatosPartida.LadoGanadaor = DatosPartida.Lados.Der;
-            else
-                DatosPartida.LadoGanadaor = DatosPartida.Lados.Izq;
-            //puntajes
-            DatosPartida.PtsGanador = Player1.Dinero;
-            DatosPartida.PtsPerdedor = Player2.Dinero;
-        }
-        else
-        {
-            //lado que gano
-            if (Player2.LadoActual == Visualizacion.Lado.Der)
-                DatosPartida.LadoGanadaor = DatosPartida.Lados.Der;
-            else
-                DatosPartida.LadoGanadaor = DatosPartida.Lados.Izq;
-
-            //puntajes
-            DatosPartida.PtsGanador = Player2.Dinero;
-            DatosPartida.PtsPerdedor = Player1.Dinero;
-        }
+        finalScore.SetPlayer1Score(Player1.Dinero);
+        finalScore.SetPlayer2Score(Player2.Dinero);
 
         Player1.GetComponent<Frenado>().Frenar();
         Player2.GetComponent<Frenado>().Frenar();

@@ -76078,6 +76078,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c8ccfbee54199948923d8705f53aea9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finalScore: {fileID: 11400000, guid: 7e66524a1d04deb45855de33a5e2d623, type: 2}
+  nextScene: PtsFinal
+  eventChannelSceneManager: {fileID: 11400000, guid: 3ab122df3c4dd524990f4a8eb2bc65fa,
+    type: 2}
   TiempoDeJuego: 60
   gameSettings: {fileID: 11400000, guid: 0050c85ecd2c289499f4a1df9d5bd970, type: 2}
   EstAct: 0

@@ -6,9 +6,7 @@ Channels: Scripts
 
 Pull de Objetos: Scripts
 
-7 28 27 26 6 25 24 20 23 1 22 21 19
 
+Hora de la siesta, Hora pico
 
-matar los que esten atrs en eje Z
-
-Hora de la siest, Hora pico
+  
