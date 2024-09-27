@@ -115,6 +115,7 @@ public class Visualizacion : MonoBehaviour
 		CamCalibracion.enabled = false;
 		CamConduccion.enabled = false;
 		CamDescarga.enabled = true;
+		volante.gameObject.SetActive(true);
 
         Array.ForEach(enableInPlayerStates, e => e.SetPlayerState(Pj.EstAct));
     }
@@ -193,6 +194,7 @@ public class Visualizacion : MonoBehaviour
                 TutoFinalizado.SetActive(true);
                 break;
 		}
+		volante.gameObject.SetActive(true);
 	}
 	
 	void SetVolante()

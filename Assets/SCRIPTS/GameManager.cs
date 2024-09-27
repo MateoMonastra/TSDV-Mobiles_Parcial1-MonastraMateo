@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
 
     public float TiempoDeJuego = 60;
 
+    public GameSettings gameSettings;
+
     public enum EstadoJuego
     {
         Calibrando,
@@ -103,12 +105,12 @@ public class GameManager : MonoBehaviour
         {
             case EstadoJuego.Calibrando:
 
-                if (Input.GetKeyDown(KeyCode.W))
+                if (InputManager.GetInstance().GetAxis("Vertical1") > 0)
                 {
                     Player1.Seleccionado = true;
                 }
 
-                if (Input.GetKeyDown(KeyCode.UpArrow))
+                if (InputManager.GetInstance().GetAxis("Vertical2") > 0)
                 {
                     Player2.Seleccionado = true;
                 }
@@ -160,8 +162,15 @@ public class GameManager : MonoBehaviour
 
                 TiempoDeJuegoText.text = TiempoDeJuego.ToString("00");
 
-                CheckLastPlace();
-                
+                if (gameSettings.PlayerCount == 2)
+                {
+                    CheckLastPlace();
+                }
+                else
+                {
+                    currentLastPlace = currentLastPlace = Player1.transform.position;
+                }
+
                 break;
 
             case EstadoJuego.Finalizado:
@@ -182,19 +191,32 @@ public class GameManager : MonoBehaviour
 
     public void IniciarTutorial()
     {
-        for (int i = 0; i < ObjsCalibracion1.Length; i++)
+        if (gameSettings.PlayerCount == 2)
         {
-            ObjsCalibracion1[i].SetActive(true);
-            ObjsCalibracion2[i].SetActive(true);
+            for (int i = 0; i < ObjsCalibracion1.Length; i++)
+            {
+                ObjsCalibracion1[i].SetActive(true);
+                ObjsCalibracion2[i].SetActive(true);
+            }
+
+
+            Player1.CambiarATutorial();
+            Player2.CambiarATutorial();
+        }
+        else
+        {
+            for (int i = 0; i < ObjsCalibracion1.Length; i++)
+            {
+                ObjsCalibracion1[i].SetActive(true);
+            }
+
+            Player1.CambiarATutorial();
         }
 
         for (int i = 0; i < ObjsCarrera.Length; i++)
         {
             ObjsCarrera[i].SetActive(false);
         }
-
-        Player1.CambiarATutorial();
-        Player2.CambiarATutorial();
 
         TiempoDeJuegoText.transform.parent.gameObject.SetActive(false);
         ConteoInicio.gameObject.SetActive(false);
@@ -245,29 +267,7 @@ public class GameManager : MonoBehaviour
         Player1.ContrDesc.FinDelJuego();
         Player2.ContrDesc.FinDelJuego();
     }
-
-    //se encarga de posicionar la camara derecha para el jugador que esta a la derecha y viseversa
-    //void SetPosicion(PlayerInfo pjInf) {
-    //    pjInf.PJ.GetComponent<Visualizacion>().SetLado(pjInf.LadoAct);
-    //    //en este momento, solo la primera vez, deberia setear la otra camara asi no se superponen
-    //    pjInf.PJ.ContrCalib.IniciarTesteo();
-    //
-    //
-    //    if (pjInf.PJ == Player1) {
-    //        if (pjInf.LadoAct == Visualizacion.Lado.Izq)
-    //            Player2.GetComponent<Visualizacion>().SetLado(Visualizacion.Lado.Der);
-    //        else
-    //            Player2.GetComponent<Visualizacion>().SetLado(Visualizacion.Lado.Izq);
-    //    }
-    //    else {
-    //        if (pjInf.LadoAct == Visualizacion.Lado.Izq)
-    //            Player1.GetComponent<Visualizacion>().SetLado(Visualizacion.Lado.Der);
-    //        else
-    //            Player1.GetComponent<Visualizacion>().SetLado(Visualizacion.Lado.Izq);
-    //    }
-    //
-    //}
-
+    
     //cambia a modo de carrera
     void CambiarACarrera()
     {
@@ -278,51 +278,89 @@ public class GameManager : MonoBehaviour
             ObjsCarrera[i].SetActive(true);
         }
 
-        //desactivacion de la calibracion
-        Player1.FinCalibrado = true;
+        // DificultySetter.StartNewRace(Dificulty);
 
-        for (int i = 0; i < ObjsCalibracion1.Length; i++)
+        if (gameSettings.PlayerCount == 2)
         {
-            ObjsCalibracion1[i].SetActive(false);
-        }
+            //desactivacion de la calibracion
+            Player1.FinCalibrado = true;
 
-        Player2.FinCalibrado = true;
+            for (int i = 0; i < ObjsCalibracion1.Length; i++)
+            {
+                ObjsCalibracion1[i].SetActive(false);
+            }
 
-        for (int i = 0; i < ObjsCalibracion2.Length; i++)
-        {
-            ObjsCalibracion2[i].SetActive(false);
-        }
+            Player2.FinCalibrado = true;
+
+            for (int i = 0; i < ObjsCalibracion2.Length; i++)
+            {
+                ObjsCalibracion2[i].SetActive(false);
+            }
 
 
-        //posiciona los camiones dependiendo de que lado de la pantalla esten
-        if (Player1.LadoActual == Visualizacion.Lado.Izq)
-        {
-            Player1.gameObject.transform.position = PosCamionesCarrera[0];
-            Player2.gameObject.transform.position = PosCamionesCarrera[1];
+            //posiciona los camiones dependiendo de que lado de la pantalla esten
+            if (Player1.LadoActual == Visualizacion.Lado.Izq)
+            {
+                Player1.gameObject.transform.position = PosCamionesCarrera[0];
+                Player2.gameObject.transform.position = PosCamionesCarrera[1];
+            }
+            else
+            {
+                Player1.gameObject.transform.position = PosCamionesCarrera[1];
+                Player2.gameObject.transform.position = PosCamionesCarrera[0];
+            }
+
+            Player1.transform.forward = Vector3.forward;
+            Player1.GetComponent<Frenado>().Frenar();
+            Player1.CambiarAConduccion();
+
+            Player2.transform.forward = Vector3.forward;
+            Player2.GetComponent<Frenado>().Frenar();
+            Player2.CambiarAConduccion();
+
+            //los deja andando
+            Player1.GetComponent<Frenado>().RestaurarVel();
+            Player2.GetComponent<Frenado>().RestaurarVel();
+            //cancela la direccion
+            Player1.GetComponent<ControlDireccion>().Habilitado = false;
+            Player2.GetComponent<ControlDireccion>().Habilitado = false;
+            //les de direccion
+            Player1.transform.forward = Vector3.forward;
+            Player2.transform.forward = Vector3.forward;
         }
         else
         {
-            Player1.gameObject.transform.position = PosCamionesCarrera[1];
-            Player2.gameObject.transform.position = PosCamionesCarrera[0];
+            //desactivacion de la calibracion
+            Player1.FinCalibrado = true;
+
+            for (int i = 0; i < ObjsCalibracion1.Length; i++)
+            {
+                ObjsCalibracion1[i].SetActive(false);
+            }
+
+            //posiciona los camiones dependiendo de que lado de la pantalla esten
+            if (Player1.LadoActual == Visualizacion.Lado.Izq)
+            {
+                Player1.gameObject.transform.position = PosCamionesCarrera[0];
+            }
+            else
+            {
+                Player1.gameObject.transform.position = PosCamionesCarrera[1];
+            }
+
+            Player1.transform.forward = Vector3.forward;
+            Player1.GetComponent<Frenado>().Frenar();
+            Player1.CambiarAConduccion();
+
+            //los deja andando
+            Player1.GetComponent<Frenado>().RestaurarVel();
+            //cancela la direccion
+            Player1.GetComponent<ControlDireccion>().Habilitado = false;
+            //les de direccion
+            Player1.transform.forward = Vector3.forward;
         }
 
-        Player1.transform.forward = Vector3.forward;
-        Player1.GetComponent<Frenado>().Frenar();
-        Player1.CambiarAConduccion();
 
-        Player2.transform.forward = Vector3.forward;
-        Player2.GetComponent<Frenado>().Frenar();
-        Player2.CambiarAConduccion();
-
-        //los deja andando
-        Player1.GetComponent<Frenado>().RestaurarVel();
-        Player2.GetComponent<Frenado>().RestaurarVel();
-        //cancela la direccion
-        Player1.GetComponent<ControlDireccion>().Habilitado = false;
-        Player2.GetComponent<ControlDireccion>().Habilitado = false;
-        //les de direccion
-        Player1.transform.forward = Vector3.forward;
-        Player2.transform.forward = Vector3.forward;
 
         TiempoDeJuegoText.transform.parent.gameObject.SetActive(false);
         ConteoInicio.gameObject.SetActive(false);
@@ -330,29 +368,42 @@ public class GameManager : MonoBehaviour
 
     public void FinCalibracion(int playerID)
     {
-        if (playerID == 0)
+        if (gameSettings.PlayerCount == 2)
         {
-            Player1.FinTuto = true;
-        }
+            if (playerID == 0)
+            {
+                Player1.FinTuto = true;
 
-        if (playerID == 1)
+            }
+            if (playerID == 1)
+            {
+                Player2.FinTuto = true;
+            }
+
+            if (Player1.FinTuto && Player2.FinTuto)
+                CambiarACarrera();
+
+        }
+        else
         {
-            Player2.FinTuto = true;
-        }
+            if (playerID == 0)
+            {
+                CambiarACarrera();
 
-        if (Player1.FinTuto && Player2.FinTuto)
-            CambiarACarrera();
+            }
+        }
     }
 
     private void CheckLastPlace()
     {
-        if (Player1.transform.position.z > Player2.transform.position.z)
-        {
-            currentLastPlace = Player2.transform.position;
-        }
-        else
+        if (gameSettings.PlayerCount == 2)
         {
             currentLastPlace = Player1.transform.position;
         }
+        else
+        {
+            currentLastPlace = Player1.transform.position.z > Player2.transform.position.z ? Player2.transform.position : Player1.transform.position;
+        }
+        
     }
 }

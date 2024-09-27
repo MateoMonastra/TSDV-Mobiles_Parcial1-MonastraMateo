@@ -36,12 +36,7 @@ public class ObjectPullController : MonoBehaviour
         
             if (bagPos.transform.position.z < GameManager.GetInstance().currentLastPlace.z)
             {
-                Debug.Log("DESPAWN");
                 bagSpawner.DespawnBag(bagPos.transform);
-            }
-            else
-            {
-                Debug.Log($" {bagPos.gameObject}: {bagPos.transform.position}, current place:{GameManager.GetInstance().currentLastPlace}");
             }
         }
     }
