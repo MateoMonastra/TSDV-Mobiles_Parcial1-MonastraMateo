@@ -1,12 +1,15 @@
 Patrones de diseño:
 
-Singleton: Script GameManager, linea 9
-
-Channels: Scripts 
-
-Pull de Objetos: Scripts
+Singleton: Script GameManager, instancia linea 9, (Assets->SCRIPTS->Game). 
+Se utiliza porque no esta pensado tener mas de 1 gameManager por escena, y esto nos da la facilidad de acceder a los datos y solo necesitar la instancia.
 
 
-Hora de la siesta, Hora pico
+Channels: Scripts SceneManager, SoundManager (Assets->SCRIPTS->EventSystems)
+Utilizo channels para facilitar la comunicacion entre clases, por ejemplo para hacer una carga de escena como en GameManager linea 185
+
+
+Pull de Objetos: Scripts BagSpawner, ObjectPullController (Assets->SCRIPTS->Game)
+Lo utilizo para no tener bolsas de dinero innecesarias en la escena, administrandolas con un ObjectPullController pero solicitandolas al BagSpawner
+
 
   
