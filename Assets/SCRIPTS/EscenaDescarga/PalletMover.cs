@@ -25,12 +25,13 @@ public class PalletMover : ManejoPallets
                     PrimerPaso();
                 }
 
-                if (Tenencia() && InputManager.GetInstance().GetAxis("Vertical1") < 0)
+                if (Tenencia() && InputManager.GetInstance().GetAxis("Vertical1") < 0 || Input.GetKey(KeyCode.S))
                 {
                     SegundoPaso();
                 }
 
-                if (segundoCompleto && Tenencia() && InputManager.GetInstance().GetAxis("Horizontal1") > 0)
+                if (segundoCompleto && Tenencia() && InputManager.GetInstance().GetAxis("Horizontal1") > 0 ||
+                    Input.GetKey(KeyCode.D))
                 {
                     TercerPaso();
                 }
@@ -42,12 +43,14 @@ public class PalletMover : ManejoPallets
                     PrimerPaso();
                 }
 
-                if (Tenencia() && InputManager.GetInstance().GetAxis("Vertical2") < 0)
+                if (Tenencia() && InputManager.GetInstance().GetAxis("Vertical2") < 0 ||
+                    Input.GetKey(KeyCode.DownArrow))
                 {
                     SegundoPaso();
                 }
 
-                if (segundoCompleto && Tenencia() && InputManager.GetInstance().GetAxis("Horizontal2") > 0)
+                if (segundoCompleto && Tenencia() && InputManager.GetInstance().GetAxis("Horizontal2") > 0 ||
+                    Input.GetKey(KeyCode.RightArrow))
                 {
                     TercerPaso();
                 }

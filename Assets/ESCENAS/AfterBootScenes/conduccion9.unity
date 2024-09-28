@@ -76084,6 +76084,10 @@ MonoBehaviour:
     type: 2}
   player2UI: {fileID: 1643806369}
   player2Cam: {fileID: 269254863}
+  player1Cams:
+  - {fileID: 6356}
+  - {fileID: 6358}
+  - {fileID: 6359}
   TiempoDeJuego: 60
   gameSettings: {fileID: 11400000, guid: 0050c85ecd2c289499f4a1df9d5bd970, type: 2}
   EstAct: 0
@@ -76102,8 +76106,6 @@ MonoBehaviour:
   PosCamionesCarrera:
   - {x: -17.5, y: 1, z: 5243}
   - {x: -4.2, y: 1, z: 5243}
-  PosCamion1Tuto: {x: 11.5, y: 6004.3, z: 5014.5}
-  PosCamion2Tuto: {x: -257.3, y: 6004.3, z: 5014.5}
   ObjsCalibracion1:
   - {fileID: 3073}
   ObjsCalibracion2:
@@ -76113,6 +76115,7 @@ MonoBehaviour:
   - {fileID: 3102}
   - {fileID: 213}
   currentLastPlace: {x: 0, y: 0, z: 0}
+  gameSetted: 0
 --- !u!1001 &13088
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -82443,7 +82446,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 132, y: 88}
+  m_SizeDelta: {x: 134, y: 102}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &11471493
 MonoBehaviour:
@@ -83619,6 +83622,7 @@ MonoBehaviour:
   - {fileID: 1699721135}
   - {fileID: 275430533}
   bagSpawner: {fileID: 68284658}
+  extraZDistance: 20
 --- !u!4 &95545361
 Transform:
   m_ObjectHideFlags: 0
@@ -84005,10 +84009,10 @@ RectTransform:
   - {fileID: 11471492}
   m_Father: {fileID: 611983552}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -0.00099182, y: 0.000030517578}
-  m_SizeDelta: {x: 134.96, y: -418.6475}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: -0.0009765625, y: 53.899994}
+  m_SizeDelta: {x: -835.04, y: 100.826294}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &314869888
 GameObject:

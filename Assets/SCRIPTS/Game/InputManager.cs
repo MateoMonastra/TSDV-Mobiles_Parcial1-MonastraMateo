@@ -32,6 +32,8 @@ public class InputManager
         return GetOrAddAxis(inputName) + Input.GetAxis(inputName);
 #elif UNITY_ANDROID || UNITY_IOS
         return GetOrAddAxis(inputName);
+#elif UNITY_STANDALONE_WIN
+        return GetOrAddAxis(inputName) + Input.GetAxis(inputName);
 #endif
     }
 

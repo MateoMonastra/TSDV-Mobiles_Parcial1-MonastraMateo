@@ -42,11 +42,7 @@ public class GameManager : MonoBehaviour
     //posiciones de los camiones dependientes del lado que les toco en la pantalla
     //la pos 0 es para la izquierda y la 1 para la derecha
     public Vector3[] PosCamionesCarrera = new Vector3[2];
-
-    //posiciones de los camiones para el tutorial
-    public Vector3 PosCamion1Tuto = Vector3.zero;
-    public Vector3 PosCamion2Tuto = Vector3.zero;
-
+    
     //listas de GO que activa y desactiva por sub-escena
     //escena de tutorial
     public GameObject[] ObjsCalibracion1;
@@ -108,12 +104,12 @@ public class GameManager : MonoBehaviour
         {
             case EstadoJuego.Calibrando:
 
-                if (InputManager.GetInstance().GetAxis("Vertical1") > 0)
+                if (InputManager.GetInstance().GetAxis("Vertical1") > 0 || Input.GetKey(KeyCode.W))
                 {
                     Player1.Seleccionado = true;
                 }
 
-                if (InputManager.GetInstance().GetAxis("Vertical2") > 0)
+                if (InputManager.GetInstance().GetAxis("Vertical2") > 0 || Input.GetKey(KeyCode.UpArrow))
                 {
                     Player2.Seleccionado = true;
                 }
@@ -164,9 +160,9 @@ public class GameManager : MonoBehaviour
                 ConteoInicio.gameObject.SetActive(ConteoRedresivo);
 
                 TiempoDeJuegoText.text = TiempoDeJuego.ToString("00");
-                   
+
                 CheckLastPlace();
-                
+
                 break;
 
             case EstadoJuego.Finalizado:
@@ -182,6 +178,7 @@ public class GameManager : MonoBehaviour
 
                 break;
         }
+
         if (gameSettings.PlayerCount != 2 && !gameSetted)
         {
             player2UI.SetActive(false);
@@ -193,6 +190,16 @@ public class GameManager : MonoBehaviour
 
             gameSetted = true;
         }
+        else if (gameSettings.PlayerCount == 2 && !gameSetted)
+        {
+            foreach (var cam in player1Cams)
+            {
+                cam.rect = new Rect(0, 0, 0.5f, 1);
+            }
+
+            gameSetted = true;
+        }
+
         TiempoDeJuegoText.transform.parent.gameObject.SetActive(EstAct == EstadoJuego.Jugando && !ConteoRedresivo);
     }
 
