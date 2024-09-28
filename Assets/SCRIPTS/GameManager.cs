@@ -97,12 +97,6 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        //REINICIAR
-        if (Input.GetKey(KeyCode.Alpha0))
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        }
-
         //CIERRA LA APLICACION
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -269,8 +263,6 @@ public class GameManager : MonoBehaviour
             ObjsCarrera[i].SetActive(true);
         }
 
-        // DificultySetter.StartNewRace(Dificulty);
-
         if (gameSettings.PlayerCount == 2)
         {
             //desactivacion de la calibracion
@@ -351,7 +343,10 @@ public class GameManager : MonoBehaviour
             Player1.transform.forward = Vector3.forward;
         }
 
-
+        if (gameSettings.Difficulty == GameSettings.Difficult.NapTime)
+        {
+            ObjsCarrera[0].SetActive(false);
+        }
 
         TiempoDeJuegoText.transform.parent.gameObject.SetActive(false);
         ConteoInicio.gameObject.SetActive(false);

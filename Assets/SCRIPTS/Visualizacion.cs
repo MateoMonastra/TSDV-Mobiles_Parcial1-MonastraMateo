@@ -82,6 +82,7 @@ public class Visualizacion : MonoBehaviour
                 SetBonus();
                 //contador de dinero
                 SetDinero();
+                volante.gameObject.SetActive(true);
                 break;
 
             case Player.Estados.EnTutorial:
@@ -121,32 +122,6 @@ public class Visualizacion : MonoBehaviour
     }
 	
 	//---------//
-	
-	public void SetLado(Lado lado)
-	{
-		LadoAct = lado;
-		
-		Rect r = new Rect();
-		r.width = CamConduccion.rect.width;
-		r.height = CamConduccion.rect.height;
-		r.y = CamConduccion.rect.y;
-		
-		switch (lado)
-		{
-		case Lado.Der:
-			r.x = 0.5f;
-			break;
-			
-			
-		case Lado.Izq:
-			r.x = 0;
-			break;
-		}
-		
-		CamCalibracion.rect = r;
-		CamConduccion.rect = r;
-		CamDescarga.rect = r;
-	}
 	
 	void SetBonus()
 	{

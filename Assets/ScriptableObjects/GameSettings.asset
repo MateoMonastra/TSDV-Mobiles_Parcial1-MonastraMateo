@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: GameSettings
   m_EditorClassIdentifier: 
   playerCount: 2
-  difficulty: 0
+  difficulty: 1

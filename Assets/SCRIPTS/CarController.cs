@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class CarController : MonoBehaviour {
 
+    [SerializeField] private float acel = 1f;
     public List<WheelCollider> throttleWheels = new List<WheelCollider>();
     public List<WheelCollider> steeringWheels = new List<WheelCollider>();
     public float throttleCoefficient = 20000f;
     public float maxTurn = 20f;
     float giro = 0f;
-    float acel = 1f;
 
 	
 	// Update is called once per frame

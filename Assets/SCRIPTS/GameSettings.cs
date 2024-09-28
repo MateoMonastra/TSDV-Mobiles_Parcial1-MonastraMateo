@@ -8,8 +8,8 @@ public class GameSettings : ScriptableObject
 {
     public enum Difficult
     {
-        HoraPico,
-        HoraDeLaSiesta
+        RushHour,
+        NapTime
     }
 
     [SerializeField] private int playerCount;
