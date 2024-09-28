@@ -15,6 +15,7 @@ public class ObjectPullController : MonoBehaviour
     [SerializeField] private List<GameObject> thirdQuarterBags;
     
     [SerializeField] private BagSpawner bagSpawner;
+    [SerializeField] private float extraZDistance = 20.0f;
 
 
     private void Start()
@@ -34,7 +35,7 @@ public class ObjectPullController : MonoBehaviour
         {
             if (bagPos.transform.position == Vector3.zero) break;
         
-            if (bagPos.transform.position.z < GameManager.GetInstance().currentLastPlace.z)
+            if (bagPos.transform.position.z < GameManager.GetInstance().currentLastPlace.z - extraZDistance)
             {
                 bagSpawner.DespawnBag(bagPos.transform);
             }

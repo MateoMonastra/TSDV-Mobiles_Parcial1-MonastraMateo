@@ -1,15 +1,15 @@
 Patrones de diseño:
 
-Singleton: Script GameManager, instancia linea 9, (Assets->SCRIPTS->Game). 
-Se utiliza porque no esta pensado tener mas de 1 gameManager por escena, y esto nos da la facilidad de acceder a los datos y solo necesitar la instancia.
+Singleton: Script GameManager, instancia en la línea 9, (Assets->SCRIPTS->Game).
+Se utiliza porque no está pensado tener más de un GameManager por escena, lo que nos facilita acceder a los datos y solo necesitar la instancia para hacerlo.
 
+Channels: Scripts SceneManager, SoundManager (Assets->SCRIPTS->EventSystems).
+Utilizo channels para facilitar la comunicación entre clases, ya que de esta manera puedo utilizar funciones sin que los scripts en sí se conozcan entre ellos.
+Por ejemplo, para hacer una carga de escena, como en la línea 185 de GameManager.
 
-Channels: Scripts SceneManager, SoundManager (Assets->SCRIPTS->EventSystems)
-Utilizo channels para facilitar la comunicacion entre clases, por ejemplo para hacer una carga de escena como en GameManager linea 185
-
-
-Pull de Objetos: Scripts BagSpawner, ObjectPullController (Assets->SCRIPTS->Game)
-Lo utilizo para no tener bolsas de dinero innecesarias en la escena, administrandolas con un ObjectPullController pero solicitandolas al BagSpawner
+Pool de Objetos: Scripts BagSpawner, ObjectPullController (Assets->SCRIPTS->Game).
+Lo utilizo para evitar tener bolsas de dinero innecesarias en la escena, administrándolas con un ObjectPullController pero solicitándolas al BagSpawner. 
+Aunque el programa no tenga problemas de optimización, había muchas bolsas activas que no se veían, y con este patrón ordenamos la escena.
 
 
   

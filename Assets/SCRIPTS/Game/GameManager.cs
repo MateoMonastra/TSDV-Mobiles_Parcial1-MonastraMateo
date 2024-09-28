@@ -1,18 +1,19 @@
-using System;
+using System.Collections;
+using System.Collections.Generic;
+using EventSystems.EventSceneManager;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
-using System.Collections;
-using EventSystems.EventSceneManager;
-using UnityEngine.Serialization;
 
 public class GameManager : MonoBehaviour
 {
     private static GameManager _instancia;
-    
+
     [SerializeField] private FinalScore finalScore;
     [SerializeField] private string nextScene = "PtsFinal";
-    [SerializeField]private EventChannelSceneManager eventChannelSceneManager;
+    [SerializeField] private EventChannelSceneManager eventChannelSceneManager;
+    [SerializeField] private GameObject player2UI;
+    [SerializeField] private GameObject player2Cam;
+    [SerializeField] private List<Camera> player1Cams;
 
     public float TiempoDeJuego = 60;
 
@@ -56,8 +57,8 @@ public class GameManager : MonoBehaviour
     public GameObject[] ObjsCarrera;
 
     public Vector3 currentLastPlace;
+    public bool gameSetted;
 
-    
 
     //--------------------------------------------------------//
 
@@ -65,7 +66,7 @@ public class GameManager : MonoBehaviour
     {
         if (_instancia == null)
         {
-            GameManager._instancia = this;
+            _instancia = this;
         }
         else if (_instancia != this)
         {
@@ -82,17 +83,17 @@ public class GameManager : MonoBehaviour
 
     private void OnDestroy()
     {
-        GameManager._instancia = null;
+        _instancia = null;
     }
 
     public static GameManager GetInstance()
     {
-        if (GameManager._instancia == null)
+        if (_instancia == null)
         {
-            GameManager._instancia = FindObjectOfType<GameManager>();
+            _instancia = FindObjectOfType<GameManager>();
         }
 
-        return GameManager._instancia;
+        return _instancia;
     }
 
     void Update()
@@ -163,16 +164,9 @@ public class GameManager : MonoBehaviour
                 ConteoInicio.gameObject.SetActive(ConteoRedresivo);
 
                 TiempoDeJuegoText.text = TiempoDeJuego.ToString("00");
-
-                if (gameSettings.PlayerCount == 2)
-                {
-                    CheckLastPlace();
-                }
-                else
-                {
-                    currentLastPlace = currentLastPlace = Player1.transform.position;
-                }
-
+                   
+                CheckLastPlace();
+                
                 break;
 
             case EstadoJuego.Finalizado:
@@ -184,12 +178,21 @@ public class GameManager : MonoBehaviour
                 {
                     eventChannelSceneManager.RemoveScene(gameObject.scene.name);
                     eventChannelSceneManager.AddScene(nextScene);
-                    
                 }
 
                 break;
         }
+        if (gameSettings.PlayerCount != 2 && !gameSetted)
+        {
+            player2UI.SetActive(false);
+            player2Cam.SetActive(false);
+            foreach (var cam in player1Cams)
+            {
+                cam.rect = new Rect(0, 0, 1, 1);
+            }
 
+            gameSetted = true;
+        }
         TiempoDeJuegoText.transform.parent.gameObject.SetActive(EstAct == EstadoJuego.Jugando && !ConteoRedresivo);
     }
 
@@ -204,7 +207,6 @@ public class GameManager : MonoBehaviour
                 ObjsCalibracion1[i].SetActive(true);
                 ObjsCalibracion2[i].SetActive(true);
             }
-
 
             Player1.CambiarATutorial();
             Player2.CambiarATutorial();
@@ -230,16 +232,19 @@ public class GameManager : MonoBehaviour
 
     void EmpezarCarrera()
     {
+        if (gameSettings.PlayerCount == 2)
+        {
+            Player2.GetComponent<Frenado>().RestaurarVel();
+            Player2.GetComponent<ControlDireccion>().Habilitado = true;
+        }
+
         Player1.GetComponent<Frenado>().RestaurarVel();
         Player1.GetComponent<ControlDireccion>().Habilitado = true;
-
-        Player2.GetComponent<Frenado>().RestaurarVel();
-        Player2.GetComponent<ControlDireccion>().Habilitado = true;
     }
 
     void FinalizarCarrera()
     {
-        EstAct = GameManager.EstadoJuego.Finalizado;
+        EstAct = EstadoJuego.Finalizado;
 
         TiempoDeJuego = 0;
 
@@ -247,16 +252,19 @@ public class GameManager : MonoBehaviour
         finalScore.SetPlayer2Score(Player2.Dinero);
 
         Player1.GetComponent<Frenado>().Frenar();
-        Player2.GetComponent<Frenado>().Frenar();
-
         Player1.ContrDesc.FinDelJuego();
-        Player2.ContrDesc.FinDelJuego();
+
+        if (gameSettings.PlayerCount == 2)
+        {
+            Player2.GetComponent<Frenado>().Frenar();
+            Player2.ContrDesc.FinDelJuego();
+        }
     }
-    
+
     //cambia a modo de carrera
     void CambiarACarrera()
     {
-        EstAct = GameManager.EstadoJuego.Jugando;
+        EstAct = EstadoJuego.Jugando;
 
         for (int i = 0; i < ObjsCarrera.Length; i++)
         {
@@ -359,8 +367,8 @@ public class GameManager : MonoBehaviour
             if (playerID == 0)
             {
                 Player1.FinTuto = true;
-
             }
+
             if (playerID == 1)
             {
                 Player2.FinTuto = true;
@@ -368,14 +376,12 @@ public class GameManager : MonoBehaviour
 
             if (Player1.FinTuto && Player2.FinTuto)
                 CambiarACarrera();
-
         }
         else
         {
             if (playerID == 0)
             {
                 CambiarACarrera();
-
             }
         }
     }
@@ -384,12 +390,13 @@ public class GameManager : MonoBehaviour
     {
         if (gameSettings.PlayerCount == 2)
         {
-            currentLastPlace = Player1.transform.position;
+            currentLastPlace = Player1.transform.position.z > Player2.transform.position.z
+                ? Player2.transform.position
+                : Player1.transform.position;
         }
         else
         {
-            currentLastPlace = Player1.transform.position.z > Player2.transform.position.z ? Player2.transform.position : Player1.transform.position;
+            currentLastPlace = Player1.transform.position;
         }
-        
     }
 }
